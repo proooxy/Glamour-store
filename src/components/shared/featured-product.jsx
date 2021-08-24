@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { withRouter } from 'react-router-dom';
+
+import { isInCart } from '../../helpers';
+import { CartContext } from '../../context/cart-context';
 
 import './featured-product.styles.scss';
 
 const FeaturedProduct = (props) => {
   const { title, imageUrl, price, history, id} = props;
+  const {addProduct, cartItems} = useContext(CartContext);
+  const product = { title, imageUrl, price, id};
  
   return (
     <div className='featured-product'>
@@ -14,8 +19,21 @@ const FeaturedProduct = (props) => {
       <div className='name-price'>
         <h3>{title}</h3>
         <p>${price}</p>
+      
+        {
+          !isInCart(product, cartItems) &&
+          <button className='button nomad-btn' onClick={() => addProduct(product)}>ADD AO CARRINHO</button>
+        }
+        {
+          isInCart(product, cartItems) &&
           <button 
-            className='button nomad-btn'>ADD AO CARRINHO</button>
+            className='button is-white nomad-btn'
+            id='btn-white-outline'
+            onClick={()=> {}}>
+              ADD +1</button>
+        }
+        
+         
       </div>
     </div>
   );

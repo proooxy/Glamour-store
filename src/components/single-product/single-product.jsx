@@ -48,15 +48,7 @@ const SingleProduct = ({ match, history: { push } }) => {
                   ADD AO CARRINHO
               </button> 
             }
-            {
-              
-              <button 
-                className='button is-white nomad-btn' 
-                id='btn-white-outline'
-                >
-                  ADD MAIS
-              </button>
-            }
+            
             
             <button className='button nomad-btn' id='btn-white-outline'>
               COMPRAR AGORA
