@@ -31,7 +31,7 @@ const SingleProduct = ({ match, history: { push } }) => {
         <div className='product-details'>
           <div className='name-price'>
             <h3>{title}</h3>
-            <p>{price}</p>
+            <p>${price}</p>
           </div>
           <div className='product-description'>
             <p>
@@ -45,7 +45,7 @@ const SingleProduct = ({ match, history: { push } }) => {
                 className='button is-white nomad-btn' 
                 id='btn-white-outline'
                >
-                  ADD TO CART
+                  ADD AO CARRINHO
               </button> 
             }
             {
@@ -54,12 +54,12 @@ const SingleProduct = ({ match, history: { push } }) => {
                 className='button is-white nomad-btn' 
                 id='btn-white-outline'
                 >
-                  ADD MORE
+                  ADD MAIS
               </button>
             }
             
             <button className='button nomad-btn' id='btn-white-outline'>
-              PROCEED TO CHECKOUT
+              COMPRAR AGORA
             </button>
           </div>
           
