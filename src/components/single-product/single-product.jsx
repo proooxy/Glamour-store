@@ -1,11 +1,15 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
+import { CartContext } from '../../context/cart-context';
 import { ProductsContext } from '../../context/products-context';
+import { isInCart } from '../../helpers';
+
 import Layout from '../shared/layout';
 import './single-product.styles.scss';
 
 const SingleProduct = ({ match, history: { push } }) => {
   const { products } = useContext(ProductsContext);
+  const { addProduct, cartItems } = useContext(CartContext);
   const { id } = match.params;
   const [product, setProduct] = useState(null);
   useEffect(() => {
@@ -21,6 +25,8 @@ const SingleProduct = ({ match, history: { push } }) => {
   // while we check for product
   if (!product) { return null }
   const { imageUrl, title, price, description } = product;
+
+  const itemInCart  = isInCart(product, cartItems);
   
   return (
     <Layout>
@@ -40,12 +46,23 @@ const SingleProduct = ({ match, history: { push } }) => {
           </div>
           <div className='add-to-cart-btns'>
             {
-              
+              !itemInCart  &&
               <button 
                 className='button is-white nomad-btn' 
                 id='btn-white-outline'
+                onClick={() => addProduct(product)}
                >
                   ADD AO CARRINHO
+              </button> 
+            }
+            {
+              itemInCart  &&
+              <button 
+                className='button is-white nomad-btn' 
+                id='btn-white-outline'
+                onClick={() => {}}
+               >
+                  ADD +1
               </button> 
             }
             
