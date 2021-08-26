@@ -11,9 +11,9 @@ const Total = ({ itemCount, total, history, clearCart }) => {
       </div>
       <div className='checkout'>
         <button 
-          className='button ' 
+          className='button-total' 
           onClick={() => history.push('/checkout')}>COMPRAR AGORA</button>
-        <button className='button is-white' onClick={() => clearCart()}>LIMPAR</button>  
+        <button className='button-total-clear' onClick={() => clearCart()}>LIMPAR</button>  
       </div>
       
     </div>
