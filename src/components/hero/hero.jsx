@@ -1,7 +1,8 @@
 import './hero.styles.scss';
+import { withRouter } from 'react-router';
 import React from 'react';
 
-const Hero = () => {
+const Hero = ({ history }) => {
   return (
     <section className="hero is-info is-large hero-image">
       <div className="hero-body">
@@ -10,9 +11,10 @@ const Hero = () => {
             A loja que vai trazer Glamour para você.
           </h1>
           
-            <button className='button button-hero'>
+            <button className='button button-hero' onClick={() => history.push('/shop')}>
               Impressione você mesmo
             </button>
+          
           
          
       </div>
@@ -21,4 +23,4 @@ const Hero = () => {
   );
 }
 
-export default Hero;
+export default withRouter(Hero);

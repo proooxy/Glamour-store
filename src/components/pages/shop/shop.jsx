@@ -13,7 +13,7 @@ const Shop = () => {
   return (
     <Layout>
       <div className='product-list-container'>
-        <h2 className='product-list-title'>Loja</h2>
+        <h3 className='product-list-title'>Loja</h3>
         <div className='product-list'>
           {
             allProducts
