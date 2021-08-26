@@ -8,8 +8,9 @@ import './featured-product.styles.scss';
 
 const FeaturedProduct = (props) => {
   const { title, imageUrl, price, history, id} = props;
-  const {addProduct, cartItems} = useContext(CartContext);
+  const {addProduct, cartItems, increase} = useContext(CartContext);
   const product = { title, imageUrl, price, id};
+  const itemInCart = isInCart(product, cartItems);
  
   return (
     <div className='featured-product'>
@@ -21,16 +22,23 @@ const FeaturedProduct = (props) => {
         <p>${price}</p>
       
         {
-          !isInCart(product, cartItems) &&
-          <button className='button nomad-btn' onClick={() => addProduct(product)}>ADD AO CARRINHO</button>
+          !itemInCart &&
+          <button 
+            className='button nomad-btn' 
+            onClick={() => addProduct(product)}
+          >
+            ADD AO CARRINHO
+          </button>
         }
         {
-          isInCart(product, cartItems) &&
+          itemInCart &&
           <button 
             className='button is-white nomad-btn'
             id='btn-white-outline'
-            onClick={()=> {}}>
-              ADD +1</button>
+            onClick={()=> increase(product)}
+          >
+              ADD +1
+          </button>
         }
         
          
