@@ -2,6 +2,19 @@
   margin: 1rem;
 }
 
+.cart-title{
+  font-family: 'Arno Pro', sans-serif;
+  font-size: 2.5rem;
+  color: #361d0b;
+
+}
+
+.quantity{
+  margin: 0.5rem;
+  font-family: 'Arno Pro', sans-serif;
+  font-size: 1.25rem;
+}
+
 .total{
   font-family: 'Arno Pro', sans-serif;
   font-size: 1.5rem;
@@ -61,16 +74,17 @@ h2, .empty-cart {
   
     .item-image {
       img {
-        width: 50px;
+        width: 100px;
       }
     }
   
     .name-price {
       h4 {
-        margin: 0;
+        margin: 0.25rem;
+        font-size: 1.45rem;
       }
       p {
-        font-size: 1rem;
+        font-size: 1.45rem;
         font-weight: normal;
       }
     }

@@ -7,9 +7,9 @@ const Hero = ({ history }) => {
     <section className="hero is-info is-large hero-image">
       <div className="hero-body">
         
-          <h1 className="hero-title">
+          <h4 className="hero-title">
             A loja que vai trazer Glamour para você.
-          </h1>
+          </h4>
           
             <button className='button button-hero' onClick={() => history.push('/shop')}>
               Impressione você mesmo

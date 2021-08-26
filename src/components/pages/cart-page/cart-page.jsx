@@ -11,7 +11,7 @@ const CartPage = () => {
   return (
     <Layout>
       <>
-        <h2>Carrinho</h2>
+        <h2 className='cart-title'>Carrinho</h2>
         {
           cartItems.length === 0 ? <div className='empty-cart'>Seu carrinho está vazio</div>
           : 

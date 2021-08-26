@@ -10,9 +10,9 @@ const FeaturedCollection = () => {
 
   return (
     <div className='featured-collection container'>
-      <h2 className='featured-section-title'>IMPRESSIONE <br />
+      <h5 className='featured-section-title'>IMPRESSIONE <br />
       vocêMESMO
-      </h2>
+      </h5>
       <div className='products'>
         {
           productItems
