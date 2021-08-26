@@ -1,21 +1,21 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
+import { withRouter } from 'react-router-dom';
 import shoppingBag from '../../images/shopping-bag.png';
-import {CartContext} from '../../context/cart-context';
+import { CartContext } from '../../context/cart-context';
 import './cart-icon.styles.scss';
 
-const CartIcon = () => {
-
-  const { itemCount, cartItems } = useContext(CartContext)
-
+const CartIcon = ({ history }) => {
+  const { itemCount, cartItems } = useContext(CartContext);
+  console.log('CartItems:', cartItems);
   return (
-    <div className='cart-container'>
+    <div className='cart-container' onClick={() => history.push('/cart')}>
       <img src={shoppingBag} alt='shopping-cart-icon' />
-        {
-          itemCount > 0 ? <span className='cart-count'> { itemCount } </span> : null
-        }
-       
+      {
+        itemCount > 0 ? <span className='cart-count'> { itemCount } </span> : null
+      }
+      
     </div>
   );
 }
 
-export default CartIcon;
+export default withRouter(CartIcon);
